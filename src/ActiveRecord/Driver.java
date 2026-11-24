@@ -35,7 +35,8 @@ public class Driver {
     public void addShift(Shift session) {
         for (Shift s : schedule) {
             if (s.overlapsWith(session)) {
-                throw new IllegalArgumentException("Занятие пересекается с существующим занятием.");
+                System.err.println("Занятие пересекается с существующим занятием.");
+                return;
             }
         }
         schedule.add(session);
